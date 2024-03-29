@@ -1,0 +1,27 @@
+{% extends 'todoapp/base.html' %}
+{% block title %}Add Todo{% endblock %}
+
+{% block content %}
+<!-- add todo and show todo list here -->
+<div class="container">
+    <h1 class="my-3">Add Todo</h1>
+    <form method="POST" action="">
+        {% csrf_token %}
+        <div class="form-group d-flex">
+            <input type="text" class="form-control" id="title" name="title" placeholder="Enter title">
+            <button type="submit" class="btn btn-primary">Add Todo</button>
+        </div>
+    </form>
+    <h2 class="my-3">Todo List</h2>
+    <ul class="list-group">
+        {% for todo in todos %}
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+            {{ todo.title }}
+            <span>
+                <a href="{% url 'todoapp:updatetodo' todo.id %}" class="btn btn-primary btn-sm">Update</a>
+                <a href="{% url 'todoapp:deletetodo' todo.id %}" class="btn btn-danger btn-sm">Delete</a>
+            </span>
+        </li>
+        {% endfor %}
+</div>
+{% endblock %}
