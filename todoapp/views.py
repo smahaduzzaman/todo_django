@@ -24,19 +24,19 @@ def addtodo(request):
     }
     return render(request, 'todoapp/addtodo.html', context)
 
-def updatetodo(request, id):
+def edittodo(request, id):
     todo = Todo.objects.get(id=id)
-    if request.method == 'POST':
-        title = request.POST['title']
-        if not title:
-            return render(request, 'todoapp/updatetodo.html', {'todo': todo, 'message': 'Please enter a title!'})
-        todo.title = title
-        todo.save()
-        return render(request, 'todoapp/updatetodo.html', {'todo': todo, 'message': 'Todo updated successfully!'})
     context = {
         'todo': todo
     }
-    return render(request, 'todoapp/updatetodo.html', context)
+    return render(request, 'todoapp/edittodo.html', context)
+
+def updatetodo(request, id):
+    todo = Todo.objects.get(id=id)
+    title = request.POST['title']
+    todo.title = title
+    todo.save()
+    return redirect('addtodo')
     
 def deletetodo(request, id):
     todo = Todo.objects.get(id=id)

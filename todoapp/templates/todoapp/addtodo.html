@@ -21,7 +21,7 @@
             {{ todo.title }}
         
             <span>
-                <a href="{% url 'updatetodo' todo.id %}" class="btn btn-primary">Update</a>
+                <a href="{% url 'edittodo' todo.id %}" class="btn btn-primary">Update</a>
                 <a href="{% url 'deletetodo' todo.id %}" class="btn btn-danger">Delete</a>
             </span>
         </li>

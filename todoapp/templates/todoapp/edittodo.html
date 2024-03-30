@@ -1,0 +1,19 @@
+{% extends 'todoapp/base.html' %}
+{% block title %}Add Todo{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1 class="my-3">Add Todo</h1>
+    <hr>
+    <form method="POST" action="{% url 'updatetodo' todo.id %}">
+        {% csrf_token %}
+        <h5>id: {{todo.id}}</h5>
+        <div class="form-group d-flex mb-5">
+            <input type="hidden" name="id" value="{{todo.id}}">
+            <input type="text" class="form-control" id="title" value="{{todo.title}}" name="title"
+                placeholder="Enter title" required>
+            <button type="submit" class="btn btn-primary ms-2 px-5">UpdateTodo</button>
+        </div>
+    </form>
+</div>
+{% endblock %}
