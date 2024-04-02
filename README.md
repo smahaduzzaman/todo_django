@@ -60,8 +60,8 @@ https://github.com/smahaduzzaman/todo_django
 You can try out the live demo of the todo app here. Feel free to create an account, add tasks, and explore the features of the application.
 
 ## Author Information:
-S M Ahaduzzaman
-Email: azaman.dev@gmail.com
-LinkedIn: https://www.linkedin.com/in/smahaduzzaman
-Portfolio: https://azaman.me
-Phone: +880 1729 972223
+- S M Ahaduzzaman
+- Email: azaman.dev@gmail.com
+- LinkedIn: https://www.linkedin.com/in/smahaduzzaman
+- Portfolio: https://azaman.me
+- Phone: +880 1729 972223
